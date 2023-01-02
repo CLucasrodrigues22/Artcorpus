@@ -3,7 +3,7 @@
         'name' => 'mvc/mvc',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'eb81066793b8760220f14ac90efa71e08c8fe90b',
+        'reference' => 'a37f8fa1feef7d80478df90587e0ea62e40ffb8b',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'mvc/mvc' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'eb81066793b8760220f14ac90efa71e08c8fe90b',
+            'reference' => 'a37f8fa1feef7d80478df90587e0ea62e40ffb8b',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
