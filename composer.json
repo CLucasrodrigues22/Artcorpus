@@ -1,0 +1,22 @@
+{
+    "name": "mvc/mvc",
+    "type": "project",
+    "description": "The MVC Framework.",
+    "keywords": [
+        "framework",
+        "MVC"
+    ],
+
+    "license": "MIT",
+
+    "require": {
+        "php": "^8.1"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "MVC\\": "vendor/MVC/"
+        }
+    }
+}

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Art Corpus | Art em realçar sua beleza</title>
+
+    <!-- fontawesome CDN -->
+    <script src="https://kit.fontawesome.com/1e08d5da40.js" crossorigin="anonymous"></script>
+
+    <!-- CSS FILES -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="css/bootstrap-icons.css" rel="stylesheet">
+
+    <link href="css/template-artcorpus.css" rel="stylesheet">
+
+</head>
+
+<body id="section_1">
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-8 col-12 d-flex flex-wrap">
+                    <p class="d-flex me-4 mb-0">
+                        <i class="bi-geo-alt me-2"></i>
+                        Clsw 303, Bloco C Ed. Le Parc, Loja 65 Subsolo - Sudoeste - DF
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
+                    <ul class="social-icon">
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-instagram"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-envelope"></a>
+                        </li>
+
+                        <li class="social-icon-item">
+                            <a href="#" class="social-icon-link bi-whatsapp"></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" class="logo img-fluid" alt="Kind Heart Charity">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#inicio">Início</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#servicos">Serviços</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#avaliacoes">Avaliações</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link click-scroll" href="#sobrenos">Sobre Nós</a>
+                    </li>
+
+                    <li class="nav-item ms-3">
+                        <a class="nav-link custom-btn custom-border-btn btn" href=""><i class="bi-whatsapp"
+                                style="padding-right: 1px;"></i>WhatsApp</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <?= $this->content() ?>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-12 mb-4">
+                    <img src="images/logo.png" class="logo img-fluid" alt="">
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mb-4">
+                    <h5 class="site-footer-title mb-3">Links úteis</h5>
+
+                    <ul class="footer-menu">
+                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Início</a></li>
+
+                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Serviços</a></li>
+
+                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Avaliações</a></li>
+
+                        <li class="footer-menu-item"><a href="#" class="footer-menu-link">Sobre</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-12 mx-auto">
+                    <h5 class="site-footer-title mb-3">Contatos/Agendamento</h5>
+
+                    <p class="text-white d-flex">
+                        <i class="bi-envelope me-2"></i>
+
+                        <a href="mailto:info@yourgmail.com" class="site-footer-link">
+                            contato.agendamento@artcorpus.com.br
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex mt-3">
+                        <i class="bi-geo-alt me-2"></i>
+                        Clsw 303, Bloco C Ed. Le Parc, Loja 65 Subsolo - Sudoeste - DF (70673-623)
+                    </p>
+
+                    <a class="custom-btn btn mt-3" href=""><i class="bi-whatsapp"
+                            style="padding-right: 1px;"></i>WhatsApp
+                    </a>
+
+                    <a class="custom-btn btn mt-3" href=""><i class="bi-geo" style="padding-right: 1px;"></i>Localização
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-7 col-12">
+                        <p class="copyright-text mb-0">Copyright ©
+                            <script>
+                                document.write(new Date().getFullYear());
+                            </script> <a href="#">Art Corpus</a>
+                        </p>
+                    </div>
+
+                    <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
+                        <ul class="social-icon">
+                            <li class="social-icon-item">
+                                <a href="" class="social-icon-link bi-instagram"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="" class="social-icon-link bi-whatsapp"></a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="mailto:" class="social-icon-link bi-envelope"></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/counter.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
