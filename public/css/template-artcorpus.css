@@ -43,9 +43,9 @@
   --primary-color:                #5bc1ac;
   --secondary-color:              #5a6f80;
   --section-bg-color:             #f0f8ff;
-  --site-footer-bg-color:         #44525d;
+  --site-footer-bg-color:         #d3d4d6;
   --custom-btn-bg-color:          #597081;
-  --custom-btn-bg-hover-color:    #5bc1ac;
+  --custom-btn-bg-hover-color:    #ba458b;
   --dark-color:                   #000000;
   --p-color:                      #717275;
   --border-color:                 #e9eaeb;
@@ -121,7 +121,7 @@ h4 {
 }
 
 h5 {
-  color: var(--primary-color);
+  color: #ba458b;
   font-size: var(--h5-font-size);
 }
 
@@ -153,7 +153,7 @@ a {
 }
 
 a:hover {
-  color: var(--primary-color);
+  color: #ba458b;
 }
 
 b,
@@ -303,10 +303,9 @@ strong {
   CUSTOM BUTTON               
 -----------------------------------------*/
 .custom-btn {
-  background: var(--secondary-color);
-  border: 2px solid transparent;
+  border: 2px solid var(--custom-btn-bg-color);
   border-radius: var(--border-radius-large);
-  color: var(--white-color);
+  color: var(--custom-btn-bg-color);
   font-size: var(--btn-font-size);
   font-weight: var(--font-weight-normal);
   line-height: normal;
@@ -320,19 +319,19 @@ strong {
 }
 
 .custom-btn:hover {
-  background: var(--primary-color);
-  color: var(--white-color);
+  background-color: #ba458b;
+  color: #ffffff;
 }
 
 .custom-border-btn {
   background: transparent;
   border: 2px solid var(--custom-btn-bg-color);
-  color: var(--primary-color);
+  color: #ba458b;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link.custom-btn:hover,
 .custom-border-btn:hover {
-  background: var(--custom-btn-bg-hover-color);
+  background-color: #ba458b;
   border-color: transparent;
   color: var(--white-color);
 }
@@ -368,7 +367,7 @@ strong {
 }
 
 .logo {
-  width: 80px;
+  width: 130px;
   height: auto;
 }
 
@@ -391,7 +390,7 @@ strong {
 .navbar-nav .nav-link.active, 
 .navbar-nav .nav-link:hover {
   background: transparent;
-  color: var(--primary-color);
+  color: #ba458b;
 }
 
 .dropdown-menu {
@@ -521,7 +520,7 @@ strong {
   SITE HEADER              
 -----------------------------------------*/
 .site-header {
-  background: var(--primary-color);
+  background-color: #ba458b;
   padding-top: 15px;
   padding-bottom: 10px;
 }
@@ -616,7 +615,7 @@ strong {
 
 .carousel-control-next-icon:hover, 
 .carousel-control-prev-icon:hover {
-  background-color: var(--primary-color);
+  background-color: #ba458b;
 }
 
 
@@ -1272,7 +1271,7 @@ blockquote::before {
 }
 
 .site-footer-bottom {
-  background-color: var(--secondary-color);
+  background-color: #999999;
   position: relative;
   z-index: 2;
   margin-top: 70px;
@@ -1285,11 +1284,12 @@ blockquote::before {
 }
 
 .site-footer-bottom a:hover {
-	color: #FF6;
+  background-color: #ba458b;
+	color: rgb(255, 255, 255);
 }
 
 .site-footer-link {
-  color: var(--white-color);
+  color: var(--p-color);
 }
 
 .copyright-text {
@@ -1303,7 +1303,8 @@ blockquote::before {
 }
 
 .site-footer .custom-btn:hover {
-  background: var(--primary-color);
+  background: #ba458b;
+  color: #ffffff;
 }
 
 
@@ -1323,7 +1324,7 @@ blockquote::before {
 
 .footer-menu-link {
   font-size: var(--p-font-size);
-  color: var(--white-color);
+  color: var(--p-color);
   display: inline-block;
   vertical-align: middle;
   margin-right: 10px;
@@ -1346,7 +1347,7 @@ blockquote::before {
 }
 
 .social-icon-link {
-  background: var(--site-footer-bg-color);
+  background: #999999;
   border-radius: var(--border-radius-large);
   color: var(--white-color);
   font-size: var(--copyright-font-size);
