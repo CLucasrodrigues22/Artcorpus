@@ -17,6 +17,28 @@ class Route extends Bootstrap {
                 'action' => 'index'
             );
 
+        // Rotas Privadas dos usuários
+            // Lista de todos os usuários
+            $routes['/listusers'] = array (
+                'route' => '/listusers',
+                'controller' => 'UserController',
+                'action' => 'index'
+            );
+
+            // Formulário de cadastro
+            $routes['/createuser'] = array (
+                'route' => '/createuser',
+                'controller' => 'UserController',
+                'action' => 'create'
+            );
+
+            // Salvar dados do usuário
+            $routes['/storeuser'] = array (
+                'route' => '/storeuser',
+                'controller' => 'UserController',
+                'action' => 'store'
+            );
+
         // Rotas de Sessão do usuário
             // Rota de formulário de login
             $routes['login'] = array (

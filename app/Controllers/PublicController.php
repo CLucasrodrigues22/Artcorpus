@@ -13,6 +13,6 @@ class PublicController extends Action
 {
     public function index()
     {
-        $this->view('web/index', 'layoutPublic');
+        $this->view('public/index', 'layoutPublic');
     }
 }
