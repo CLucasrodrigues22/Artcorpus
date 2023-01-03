@@ -10,7 +10,9 @@ class UserController extends Action
 {
     public function index()
     {
-
+        $usuarios = Container::getModel('Usuario');
+        $this->view->usuarios = $usuarios->showUsers();
+        $this->view('private/users/index', 'layoutPrivate');
     }
     
     public function create()

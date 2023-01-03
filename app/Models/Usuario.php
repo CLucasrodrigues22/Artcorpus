@@ -21,6 +21,12 @@ class Usuario extends Model
         $this->$attr = $value;
     }
 
+    public function showUsers()
+    {
+        $q = "select id, nome, usuario, imagem from usuarios";
+        return $this->db->query($q);
+    }
+    
     public function create()
     {
         $q = "insert into usuarios (nome, usuario, senha, imagem) values (:nome, :usuario, :senha, :imagem) ";
