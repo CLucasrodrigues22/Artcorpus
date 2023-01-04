@@ -348,7 +348,7 @@ strong {
 }
 
 .navbar-brand {
-  color: var(--primary-color);
+  color: #ba458b;
   font-size: var(--h6-font-size);
   font-weight: var(--font-weight-bold);
 }
@@ -421,7 +421,7 @@ strong {
 .dropdown-item:focus, 
 .dropdown-item:hover {
   background: transparent;
-  color: var(--primary-color);
+  color: #ba458b;
 }
 
 .dropdown-toggle::after {
@@ -565,17 +565,15 @@ strong {
 }
 
 #hero-slide .carousel-caption {
-  background: var(--white-color);
-  clip-path: polygon(100% 100%, 100% 150px, 0 100%);
   color: var(--secondary-color);
-  top: 1px;
-  bottom: -1px;
-  right: 0;
-  left: auto;
-  text-align: right;
-  min-width: 680px;
-  min-height: 680px;
-  padding: 100px 100px 50px 100px;
+}
+
+#hero-slide .carousel-caption h3 {
+  color: #ba458b;
+}
+
+#hero-slide .carousel-caption p {
+  font-weight: bold;
 }
 
 .carousel-image {
@@ -602,7 +600,7 @@ strong {
   opacity: 1;
 }
 
-.carousel-control-next-icon, 
+.carousel-control-next-icon,
 .carousel-control-prev-icon {
   background-color: var(--secondary-color);
   border-radius: var(--border-radius-large);
@@ -650,7 +648,7 @@ strong {
 }
 
 .featured-block-text {
-  color: var(--primary-color);
+  color: #ba458b;
   font-size: var(--h5-font-size);
   margin-top: 20px;
   transition: all 0.5s;
@@ -695,7 +693,7 @@ strong {
 
 .counter-number,
 .counter-number-text {
-  color: var(--primary-color);
+  color: #ba458b;
   font-size: var(--h1-font-size);
   font-weight: var(--font-weight-bold);
   line-height: normal;
@@ -713,7 +711,7 @@ strong {
 
 .volunteer-section::after {
   content: "";
-  background: var(--primary-color);
+  background: #ba458b;
   border-radius: 50%;
   position: absolute;
   bottom: -110px;
@@ -866,7 +864,7 @@ blockquote::before {
 }
 
 .category-block-link:hover {
-  color: var(--primary-color);
+  color: #ba458b;
 }
 
 .badge {
@@ -901,7 +899,7 @@ blockquote::before {
 
 .cta-section::before {
   content: "";
-  background-color: var(--primary-color);
+  background-color: #ba458b;
   border-radius: 50%;
   position: absolute;
   top: -100px;
@@ -936,7 +934,7 @@ blockquote::before {
 
 .testimonial-section::before {
   content: "";
-  background-color: var(--primary-color);
+  background-color: #ba458b;
   border-radius: 50%;
   position: absolute;
   top: -100px;
@@ -948,7 +946,7 @@ blockquote::before {
 
 .testimonial-section::after {
   content: "";
-  background: var(--custom-btn-bg-color);
+  background: #ba458b;
   border-radius: 50%;
   position: absolute;
   bottom: -110px;
@@ -993,7 +991,7 @@ blockquote::before {
 }
 
 #testimonial-carousel .carousel-name {
-  background: var(--primary-color);
+  background: #ba458b;
   border-radius: var(--border-radius-medium);
   position: relative;
   overflow: hidden;
@@ -1011,7 +1009,7 @@ blockquote::before {
   margin: auto;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 10px solid var(--primary-color);
+  border-bottom: 10px solid #ba458b;
 }
 
 .carousel-name-title {
@@ -1360,7 +1358,7 @@ blockquote::before {
 }
 
 .social-icon-link:hover {
-  background: var(--primary-color);
+  background: #ba458b;
   color: var(--white-color);
 }
 
@@ -1388,6 +1386,7 @@ blockquote::before {
   #hero-slide .carousel-image {
     height: 100%;
     object-fit: cover;
+    width: 100%;
   }
 }
 
@@ -1601,11 +1600,6 @@ blockquote::before {
 
   h5 {
     font-size: 20px;
-  }
-
-  #hero-slide .carousel-caption {
-    min-width: inherit;
-    padding-bottom: 30px;
   }
 
   .carousel-control-next-icon, 
