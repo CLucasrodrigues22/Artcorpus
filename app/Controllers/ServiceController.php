@@ -11,7 +11,7 @@ class ServiceController extends Action
     {
         try {
             $servicos = Container::getModel('Servico');
-            $this->view->servicos = $servicos->showServicos();
+            $this->view->dados = $servicos->showServicos();
             $this->view('private/skills/index', 'layoutPrivate');
         } catch (\PDOException $e) {
             if ($e->errorInfo[1]) {
@@ -74,8 +74,10 @@ class ServiceController extends Action
                 }
             }
 
+
             // Setando demais atributos
             $servico->__set('nome', $_POST['nome']);
+            $servico->store();
 
             $feedback = 'createsuccess';
             header("Location: /listservices?feedback=$feedback");

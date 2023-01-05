@@ -80,6 +80,13 @@ class Route extends Bootstrap {
                 'controller' => 'ServiceController',
                 'action' => 'create'
             );
+            
+            // Lista de Todos os serviços
+            $routes['/showservice'] = array (
+                'route' => '/showservice',
+                'controller' => 'ServiceController',
+                'action' => 'show'
+            );
 
             // Salvar Serviços
             $routes['/storeservice'] = array (
