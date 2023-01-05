@@ -18,6 +18,13 @@ class Route extends Bootstrap {
             );
 
         // Rotas Privadas dos usuários
+            // Index do CMS
+            $routes['/front'] = array (
+                'route' => '/front',
+                'controller' => 'PrivateController',
+                'action' => 'index'
+            );
+
             // Lista de todos os usuários
             $routes['/listusers'] = array (
                 'route' => '/listusers',
@@ -37,6 +44,20 @@ class Route extends Bootstrap {
                 'route' => '/storeuser',
                 'controller' => 'UserController',
                 'action' => 'store'
+            );
+
+            // Editar Usuario
+            $routes['/showuser'] = array (
+                'route' => '/showuser',
+                'controller' => 'UserController',
+                'action' => 'show'
+            );
+
+            // Salvar Edição de usuário
+            $routes['/updateuser'] = array (
+                'route' => '/updateuser',
+                'controller' => 'UserController',
+                'action' => 'update'
             );
 
         // Rotas de Sessão do usuário

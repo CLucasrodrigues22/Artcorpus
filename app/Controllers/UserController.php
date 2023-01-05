@@ -14,7 +14,7 @@ class UserController extends Action
         $this->view->usuarios = $usuarios->showUsers();
         $this->view('private/users/index', 'layoutPrivate');
     }
-    
+
     public function create()
     {
         $this->view('private/users/create', 'layoutPrivate');
@@ -65,6 +65,77 @@ class UserController extends Action
         $usuario->create();
 
         $feedback = 'createsuccess';
+        header("Location: /listusers?feedback=$feedback");
+        exit;
+    }
+
+    public function show()
+    {
+        $id = $_GET['id'];
+        $usuario = Container::getModel('Usuario');
+        $this->view->dados = $usuario->show($id);
+        $this->view('private/users/show', 'layoutPrivate');
+    }
+
+    public function update()
+    {
+        $id = $_GET['id'];
+
+        $usuario = Container::getModel('Usuario');
+
+        $upload['diretorio'] = 'storage/users/';
+        $upload['extensoes'] = ['jpg', 'png', 'gif'];
+
+        $upload['erros'][0] = 'Não houve erro';
+        $upload['erros'][1] = 'O arquivo no upload é maior do que o limite do PHP';
+        $upload['erros'][2] = 'O arquivo ultrapassa o limite de tamanho especifiado no HTML';
+        $upload['erros'][3] = 'O upload do arquivo foi feito parcialmente';
+
+        // Tratando imagem
+        if ($_FILES['imagem']['error'] === 0 && $_FILES['imagem']['name'] != '') {
+
+            // Remover foto atual do diretório
+            $imagemOld = $usuario->show($id);
+            $path = $upload['diretorio'] . $imagemOld['imagem'];
+            unlink($path);
+
+            // Dividindo o nome do nome da nova imagem (imagem . extensão)
+            $imagem = explode('.', $_FILES['imagem']['name']);
+            // Pegando a extensão da imagem
+            $extension = strtolower(end($imagem));
+            // Validando Extensão
+            if (array_search($extension, $upload['extensoes']) === false) { // percorre array de $upload
+                // se tiver erro >
+                $feedback = 'Só é aceito arquivos com extensões jpg, png ou gif';
+                header("Location: /showuser?feedback=$feedback&id=$id");
+                exit;
+            }
+
+            // nome para ser salvo no banco de dados
+            $namePhoto = md5($imagem[0]) . '-' . date('YmdHmi') . '.' . $extension;
+
+            // Verifica se é possível mover o arquivo para a pasta escolhida
+            if (move_uploaded_file($_FILES['imagem']['tmp_name'], $upload['diretorio'] . $namePhoto)) {
+                $usuario->__set('imagem', $namePhoto);
+            }
+        } else {
+            //reculpera o nome da foto atual caso não foi feito nenhum upload
+            $imagemOld = $usuario->show($id);
+            $usuario->__set('imagem', $imagemOld['imagem']);
+        }
+
+        // Recuperando senha atual
+        $senhaOld = $usuario->show($id);
+
+        $usuario->__set('nome', $_POST['nome']);
+        $usuario->__set('usuario', $_POST['usuario']);
+        $usuario->__set('senha', $senhaOld['senha']);
+
+        // Validar condições estabelecidas no model e depois enviando dados atributos setados para o model inserir no banco
+        $usuario->update($id);
+
+        $feedback = 'updatesuccess';
+
         header("Location: /listusers?feedback=$feedback");
         exit;
     }
