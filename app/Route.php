@@ -109,6 +109,12 @@ class Route extends Bootstrap {
                 'action' => 'delete'
             );
             
+            // Lista de Dados de contato da empresa
+            $routes['/listdatas'] = array (
+                'route' => '/listdatas',
+                'controller' => 'ContatoController',
+                'action' => 'index'
+            );
 
         // Rotas de Sessão do usuário
             // Rota de formulário de login
