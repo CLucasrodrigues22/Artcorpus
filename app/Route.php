@@ -66,6 +66,27 @@ class Route extends Bootstrap {
                 'controller' => 'UserController',
                 'action' => 'delete'
             );
+            
+            // Lista de Todos os serviços
+            $routes['/listservices'] = array (
+                'route' => '/listservices',
+                'controller' => 'ServiceController',
+                'action' => 'index'
+            );
+
+            // Formulário de criação de serviços
+            $routes['/createservice'] = array (
+                'route' => '/createservice',
+                'controller' => 'ServiceController',
+                'action' => 'create'
+            );
+
+            // Salvar Serviços
+            $routes['/storeservice'] = array (
+                'route' => '/storeservice',
+                'controller' => 'ServiceController',
+                'action' => 'store'
+            );
 
         // Rotas de Sessão do usuário
             // Rota de formulário de login

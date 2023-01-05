@@ -6,3 +6,9 @@ create table usuarios (
     `imagem` varchar(100)
 );
 
+create table servicos (
+    `id` int not null primary key auto_increment,
+    `nome` varchar(50) not null,
+    `imagem` varchar(100)
+);
+
