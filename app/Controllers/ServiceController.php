@@ -175,4 +175,37 @@ class ServiceController extends Action
             }
         }
     }
+
+    public function delete()
+    {
+        try {
+            $id = $_GET['id'];
+    
+            $servico = Container::getModel('Servico');
+    
+            $dir = 'storage/servicos/';
+    
+            // Remover foto atual do diretório
+            $photoOld = $servico->show($id);
+            $path = $dir . $photoOld['imagem'];
+            unlink($path);
+    
+            // Removendo dados do banco
+    
+            $servico->__set('id', $id);
+    
+            $servico->delete($id);
+    
+            $feedback = 'deletesuccess';
+    
+            header("Location: /listservices?feedback=$feedback");
+            exit;
+        } catch (\PDOException $e) {
+            if ($e->errorInfo[1]) {
+                $erro = $e->errorInfo[1];
+                $feedback = 'deleteerror';
+                header("Location: /listservices?feedback=$feedback&error=$erro");
+            }
+        }
+    }
 }

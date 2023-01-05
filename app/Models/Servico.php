@@ -53,4 +53,10 @@ class Servico extends Model
 
         return $this;
     }
+
+    public function delete($id)
+    {
+        $q = "delete from servicos where id = $id";
+        return $this->db->query($q);
+    }
 }
