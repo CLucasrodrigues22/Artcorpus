@@ -60,4 +60,10 @@ class Usuario extends Model
 
         return $this;
     }
+
+    public function delete($id)
+    {
+        $q = "delete from usuarios where id = $id";
+        return $this->db->query($q);
+    }
 }

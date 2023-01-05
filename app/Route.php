@@ -60,6 +60,13 @@ class Route extends Bootstrap {
                 'action' => 'update'
             );
 
+            // Deletar dados do usuário
+            $routes['/deleteuser'] = array (
+                'route' => '/deleteuser',
+                'controller' => 'UserController',
+                'action' => 'delete'
+            );
+
         // Rotas de Sessão do usuário
             // Rota de formulário de login
             $routes['login'] = array (
