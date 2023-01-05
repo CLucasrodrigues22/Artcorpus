@@ -90,4 +90,89 @@ class ServiceController extends Action
             }
         }
     }
+
+    public function show()
+    {
+        try {
+            $id = $_GET['id'];
+            $servico = Container::getModel('Servico');
+            $this->view->dados = $servico->show($id);
+            $this->view('private/skills/show', 'layoutPrivate');
+        } catch (\PDOException $e) {
+            if ($e->errorInfo[1]) {
+                $erro = $e->errorInfo[1];
+                $feedback = 'deleteerror';
+                header("Location: /listusers?feedback=$feedback&error=$erro");
+            }
+        }
+    }
+
+    public function update()
+    {
+        try {
+            $id = $_GET['id'];
+
+            $servico = Container::getModel('Servico');
+
+            $upload['diretorio'] = 'storage/servicos/';
+            $upload['extensoes'] = ['png'];
+
+            $upload['erros'][0] = 'Não houve erro';
+            $upload['erros'][1] = 'O arquivo no upload é maior do que o limite do PHP';
+            $upload['erros'][2] = 'O arquivo ultrapassa o limite de tamanho especifiado no HTML';
+            $upload['erros'][3] = 'O upload do arquivo foi feito parcialmente';
+
+            // Tratando imagem
+            if ($_FILES['imagem']['error'] === 0 && $_FILES['imagem']['name'] != '') {
+
+                // Remover foto atual do diretório
+                $imagemOld = $servico->show($id);
+                $path = $upload['diretorio'] . $imagemOld['imagem'];
+                unlink($path);
+
+                // Dividindo o nome do nome da nova imagem (imagem . extensão)
+                $imagem = explode('.', $_FILES['imagem']['name']);
+                // Pegando a extensão da imagem
+                $extension = strtolower(end($imagem));
+                // Validando Extensão
+                if (array_search($extension, $upload['extensoes']) === false) { // percorre array de $upload
+                    // se tiver erro >
+                    $feedback = 'Só é aceito arquivos com extensões png';
+                    header("Location: /showservice?feedback=$feedback&id=$id");
+                    exit;
+                }
+
+                // nome para ser salvo no banco de dados
+                $namePhoto = md5($imagem[0]) . '-' . date('YmdHmi') . '.' . $extension;
+
+                // Verifica se é possível mover o arquivo para a pasta escolhida
+                if (move_uploaded_file($_FILES['imagem']['tmp_name'], $upload['diretorio'] . $namePhoto)) {
+                    $servico->__set('imagem', $namePhoto);
+                }
+            } else {
+                //reculpera o nome da foto atual caso não foi feito nenhum upload
+                $imagemOld = $servico->show($id);
+                $servico->__set('imagem', $imagemOld['imagem']);
+            }
+
+            // Recuperando senha atual
+            $senhaOld = $servico->show($id);
+
+            $servico->__set('nome', $_POST['nome']);
+
+            // Validar condições estabelecidas no model e depois enviando dados atributos setados para o model inserir no banco
+            $servico->update($id);
+
+            $feedback = 'updatesuccess';
+
+            header("Location: /listservices?feedback=$feedback");
+            exit;
+        } catch (\PDOException $e) {
+            if ($e->errorInfo[1]) {
+                $erro = $e->errorInfo[1];
+                $feedback = 'deleteerror';
+                header("Location: /listservices?feedback=$feedback&error=$erro");
+            }
+        }
+    }
 }

@@ -1,0 +1,29 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulário/</span> Edição de Serviços</h4>
+
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Dados do Serviço</h5>
+                    <small class="float-end" style="color: red;">Todos os campos são obrigatórios</small>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="/updateservice?id=<?= $this->view->dados['id'] ?>" enctype="multipart/form-data">
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupFile01">Imagem do Serviço</label>
+                            <input type="file" class="form-control" id="inputGroupFile01" name="imagem">
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="nome-servico">Nome do Serviço</span>
+                            <input value="<?= $this->view->dados['nome'] ?>" type ="text" class="form-control" placeholder="Nome do Serviço" aria-label="Nome do Serviço" aria-describedby="nome-servico" name="nome" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-success">Salvar dados</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

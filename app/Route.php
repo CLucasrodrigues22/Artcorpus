@@ -81,6 +81,13 @@ class Route extends Bootstrap {
                 'action' => 'create'
             );
             
+            // Salvar Serviços
+            $routes['/storeservice'] = array (
+                'route' => '/storeservice',
+                'controller' => 'ServiceController',
+                'action' => 'store'
+            );
+
             // Lista de Todos os serviços
             $routes['/showservice'] = array (
                 'route' => '/showservice',
@@ -88,11 +95,11 @@ class Route extends Bootstrap {
                 'action' => 'show'
             );
 
-            // Salvar Serviços
-            $routes['/storeservice'] = array (
-                'route' => '/storeservice',
+            // Lista de Todos os serviços
+            $routes['/updateservice'] = array (
+                'route' => '/updateservice',
                 'controller' => 'ServiceController',
-                'action' => 'store'
+                'action' => 'update'
             );
 
         // Rotas de Sessão do usuário
