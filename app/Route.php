@@ -116,6 +116,13 @@ class Route extends Bootstrap {
                 'action' => 'index'
             );
 
+            // Salvar alterações de contato
+            $routes['/setContato'] = array (
+                'route' => '/setContato',
+                'controller' => 'ContatoController',
+                'action' => 'setContato'
+            );
+
         // Rotas de Sessão do usuário
             // Rota de formulário de login
             $routes['login'] = array (

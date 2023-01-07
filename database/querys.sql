@@ -18,9 +18,10 @@ create table contato (
     `logradouro` varchar(100) not null,
     `complemento` varchar(100) not null, 
     `bairro` varchar(100) not null,
-    `localidade` varchar(100) not null,
+    `numero` varchar(10) not null,
+    `cidade` varchar(100) not null,
     `uf` varchar(100) not null,
-    `localizacao` varchar(100) not null,
+    `localizacao` varchar(500) not null,
     `instagram` varchar(100) not null,
     `whatsapp` varchar(100) not null,
     `email` varchar(100) not null 
