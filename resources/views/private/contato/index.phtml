@@ -5,7 +5,7 @@
         <div class="col-xl-12">
             <div class="card mb-4">
                 <h5 class="card-header">Dados de Contato</h5>
-                <form action="<?= $this->view->contato != '' ? '/setContato?id='.$this->view->contato['id'] : '/setContato' ?>" method="post">
+                <form action="<?= $this->view->contato != '' ? '/setContato?id=' . $this->view->contato['id'] : '/setContato' ?>" method="post">
                     <div class="card-body">
                         <input required type="hidden" name="id" id="id" value="<?= $this->view->contato[''] ?>">
                         <div class="mb-3 row">
@@ -73,6 +73,12 @@
                             <label for="email" class="col-md-2 col-form-label">E-mail</label>
                             <div class="col-md-10">
                                 <input required class="form-control" type="email" value="<?= $this->view->contato['email'] ?>" id="email" name="email">
+                            </div>
+                        </div>
+                        <div class="mb-3 row">
+                            <label for="sobreempresa" class="col-md-2 col-form-label">Sobre a Empresa</label>
+                            <div class="col-md-10">
+                                <textarea required id="sobreempresa" class="form-control" name="sobre" style="resize: none;" rows="5" maxlength="1000"><?= $this->view->contato['sobre'] ?></textarea>
                             </div>
                         </div>
                         <div class="row justify-content-end mt-5">

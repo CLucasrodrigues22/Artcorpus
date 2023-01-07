@@ -18,6 +18,7 @@ class Contato extends Model
     private $instagram;
     private $whatsapp;
     private $email;
+    private $sobre;
 
     public function __get($attr) {
         return $this->$attr;
@@ -35,7 +36,7 @@ class Contato extends Model
 
     public function create()
     {
-        $q = "insert into contato (cep, logradouro, complemento, bairro, numero, cidade, uf, localizacao, instagram, whatsapp, email) values(:cep, :logradouro, :complemento, :bairro, :numero, :cidade, :uf, :localizacao, :instagram, :whatsapp, :email)";
+        $q = "insert into contato (cep, logradouro, complemento, bairro, numero, cidade, uf, localizacao, instagram, whatsapp, email, sobre) values(:cep, :logradouro, :complemento, :bairro, :numero, :cidade, :uf, :localizacao, :instagram, :whatsapp, :email, :sobre)";
         $stmt = $this->db->prepare($q);
         $stmt->bindValue(':cep', $this->__get('cep'));
         $stmt->bindValue(':logradouro', $this->__get('logradouro'));
@@ -48,6 +49,7 @@ class Contato extends Model
         $stmt->bindValue(':instagram', $this->__get('instagram'));
         $stmt->bindValue(':whatsapp', $this->__get('whatsapp'));
         $stmt->bindValue(':email', $this->__get('email'));
+        $stmt->bindValue(':sobre', $this->__get('sobre'));
         $stmt->execute();
 
         return $this;
@@ -55,7 +57,7 @@ class Contato extends Model
 
     public function update($id)
     {
-        $q = "update contato set cep = :cep, logradouro = :logradouro, complemento = :complemento, bairro = :bairro, numero = :numero, cidade = :cidade, uf = :uf, localizacao = :localizacao, instagram = :instagram, whatsapp = :whatsapp, email = :email where id = $id";
+        $q = "update contato set cep = :cep, logradouro = :logradouro, complemento = :complemento, bairro = :bairro, numero = :numero, cidade = :cidade, uf = :uf, localizacao = :localizacao, instagram = :instagram, whatsapp = :whatsapp, email = :email, sobre = :sobre where id = $id";
         $stmt = $this->db->prepare($q);
         $stmt->bindValue(':cep', $this->__get('cep'));
         $stmt->bindValue(':logradouro', $this->__get('logradouro'));
@@ -68,6 +70,7 @@ class Contato extends Model
         $stmt->bindValue(':instagram', $this->__get('instagram'));
         $stmt->bindValue(':whatsapp', $this->__get('whatsapp'));
         $stmt->bindValue(':email', $this->__get('email'));
+        $stmt->bindValue(':sobre', $this->__get('sobre'));
         $stmt->execute();
 
         return $this;

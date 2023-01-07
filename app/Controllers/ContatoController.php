@@ -35,6 +35,7 @@ class ContatoController extends Action
             $contato->__set('instagram', $_POST['instagram']);
             $contato->__set('whatsapp', $wppLink);
             $contato->__set('email', $_POST['email']);
+            $contato->__set('sobre', $_POST['sobre']);
             if(isset($id) && $id != '')
             {
                 $contato->update($id);
@@ -50,9 +51,9 @@ class ContatoController extends Action
         }catch(\PDOException $e) {
             if ($e->errorInfo[1]) {
                 echo $e;
-                //$erro = $e->errorInfo[1];
-                //$feedback = 'deleteerror';
-                //header("Location: /listservices?feedback=$feedback&error=$erro");
+                $erro = $e->errorInfo[1];
+                $feedback = 'deleteerror';
+                header("Location: /listservices?feedback=$feedback&error=$erro");
             }
         }
     }
