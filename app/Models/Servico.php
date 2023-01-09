@@ -34,9 +34,10 @@ class Servico extends Model
 
     public function store()
     {
-        $q = "insert into servicos (nome, imagem) values (:nome, :imagem)";
+        $q = "insert into servicos (nome, descricao, imagem) values (:nome, :descricao, :imagem)";
         $stmt = $this->db->prepare($q);
         $stmt->bindValue(':nome', $this->__get('nome'));
+        $stmt->bindValue(':descricao', $this->__get('descricao'));
         $stmt->bindValue(':imagem', $this->__get('imagem'));
         $stmt->execute();
 
@@ -45,9 +46,10 @@ class Servico extends Model
 
     public function update($id)
     {
-        $q = "update servicos set nome = :nome, imagem = :imagem where id = $id";
+        $q = "update servicos set nome = :nome, descricao = :descricao, imagem = :imagem where id = $id";
         $stmt = $this->db->prepare($q);
         $stmt->bindValue(':nome', $this->__get('nome'));
+        $stmt->bindValue(':descricao', $this->__get('descricao'));
         $stmt->bindValue(':imagem', $this->__get('imagem'));
         $stmt->execute();
 

@@ -8,6 +8,7 @@
                     <img class="card-img-top" src="storage/servicos/<?= $servico['imagem'] ?>" alt="Imagem do serviço" style="padding: 10%;">
                     <div class="card-body">
                         <h5 class="card-title">Nome: <strong><?= $servico['nome'] ?></strong></h5>
+                        <p><?= $servico['descricao'] ?></p>
                         <a href="/showservice?id=<?= $servico['id'] ?>" class="btn btn-warning">Editar</a>
                         <a href="/deleteservice?id=<?= $servico['id'] ?>" class="btn btn-danger">Deletar</a>
                     </div>

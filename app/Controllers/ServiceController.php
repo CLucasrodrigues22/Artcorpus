@@ -77,6 +77,7 @@ class ServiceController extends Action
 
             // Setando demais atributos
             $servico->__set('nome', $_POST['nome']);
+            $servico->__set('descricao', $_POST['descricao']);
             $servico->store();
 
             $feedback = 'createsuccess';
@@ -159,6 +160,7 @@ class ServiceController extends Action
             $senhaOld = $servico->show($id);
 
             $servico->__set('nome', $_POST['nome']);
+            $servico->__set('descricao', $_POST['descricao']);
 
             // Validar condições estabelecidas no model e depois enviando dados atributos setados para o model inserir no banco
             $servico->update($id);

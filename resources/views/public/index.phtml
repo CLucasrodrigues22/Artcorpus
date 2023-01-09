@@ -6,36 +6,49 @@
                 <div class="col-lg-12 col-12 p-0">
                     <div id="hero-slide" class="carousel carousel-fade slide" data-bs-ride="carousel">
                         <div class="carousel-inner">
-
                             <div class="carousel-item active">
-                                <img src="images/slide/slide2.jpg" class="carousel-image img-fluid" alt="...">
-                            </div>
+                                <img src="images/slide/slide1.png" class="carousel-image img-fluid" alt="...">
 
+                                <div class="carousel-caption d-flex flex-column justify-content-end">
+                                    <h1>Depilação</h1>
+                                    <p>Usamos cera negra, pra uma melhor durabilidade.</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="images/slide/slide2.jpg" class="carousel-image img-fluid" alt="...">
+
+                                <div class="carousel-caption d-flex flex-column justify-content-end">
+                                    <h1>Massagem</h1>
+                                    <p>Massagens relaxantes e suave para seus musculos.</p>
+                                </div>
+                            </div>
                             <div class="carousel-item">
                                 <img src="images/slide/slide3.jpg" class="carousel-image img-fluid" alt="...">
+
+                                <div class="carousel-caption d-flex flex-column justify-content-end">
+                                    <h1>Estética</h1>
+                                    <p>Estética corporal e facial em geral.</p>
+                                </div>
                             </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button" data-bs-target="#hero-slide" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
                         </div>
-
-                        <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-
-                        <button class="carousel-control-next" type="button" data-bs-target="#hero-slide" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
                     </div>
-                </div>
 
+                </div>
             </div>
-        </div>
     </section>
 
     <section class="section-padding" id="servicos">
         <div class="container">
             <div class="row">
-
                 <div class="col-lg-10 col-12 text-center mx-auto">
                     <h2 class="mb-5">Nossos Serviços</h2>
                 </div>
@@ -84,79 +97,56 @@
                     <a class="custom-btn btn mt-3" href="">Agende Agora
                     </a>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section class="testimonial-section section-padding section-bg" id="avaliacoes">
+    <section class="testimonial-section section-padding section-bg" id="perguntas" style="padding-top: 100px;">
         <div class="container">
             <div class="row">
 
-                <div class="col-lg-8 col-12 mx-auto">
-                    <h2 class="mb-lg-3">Avaliações de nossos clientes</h2>
+                <div class="col-lg-8 col-12 mx-auto text-center">
+                    <h2 class="mb-lg-3">Dúvidas Frequentes</h2>
+                    <small>Alguma das dúvidas frequentes de nossas clientes.</small>
+                    <div id="testimonial-carousel">
 
-                    <div id="testimonial-carousel" class="carousel carousel-fade slide" data-bs-ride="carousel">
-
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <div class="carousel-caption">
-                                    <h4 class="carousel-title">Lorem Ipsum dolor sit amet, consectetur adipsicing
-                                        kengan omeg kohm tokito charity theme</h4>
-
-                                    <small class="carousel-name"><span class="carousel-name-title">Maria</span>,
-                                        Boss</small>
+                        <div class="accordion m-5" id="accordionExample">
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        Titulo da dúvida
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="carousel-item">
-                                <div class="carousel-caption">
-                                    <h4 class="carousel-title">Sed leo nisl, posuere at molestie ac, suscipit auctor
-                                        mauris quis metus tempor orci</h4>
-
-                                    <small class="carousel-name"><span class="carousel-name-title">Thomas</span>,
-                                        Partner</small>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Titulo da dúvida
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="carousel-item">
-                                <div class="carousel-caption">
-                                    <h4 class="carousel-title">Lorem Ipsum dolor sit amet, consectetur adipsicing
-                                        kengan omeg kohm tokito charity theme</h4>
-
-                                    <small class="carousel-name"><span class="carousel-name-title">Jane</span>,
-                                        Advisor</small>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Titulo da dúvida
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                                    </div>
                                 </div>
                             </div>
-
-                            <div class="carousel-item">
-                                <div class="carousel-caption">
-                                    <h4 class="carousel-title">Sed leo nisl, posuere at molestie ac, suscipit auctor
-                                        mauris quis metus tempor orci</h4>
-
-                                    <small class="carousel-name"><span class="carousel-name-title">Bob</span>,
-                                        Entreprenuer</small>
-                                </div>
-                            </div>
-
-                            <ol class="carousel-indicators">
-                                <li data-bs-target="#testimonial-carousel" data-bs-slide-to="0" class="active">
-                                    <img src="images/avatar/portrait-beautiful-young-woman-standing-grey-wall.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                </li>
-
-                                <li data-bs-target="#testimonial-carousel" data-bs-slide-to="1" class="">
-                                    <img src="images/avatar/portrait-young-redhead-bearded-male.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                </li>
-
-                                <li data-bs-target="#testimonial-carousel" data-bs-slide-to="2" class="">
-                                    <img src="images/avatar/pretty-blonde-woman-wearing-white-t-shirt.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                </li>
-
-                                <li data-bs-target="#testimonial-carousel" data-bs-slide-to="3" class="">
-                                    <img src="images/avatar/studio-portrait-emotional-happy-funny.jpg" class="img-fluid rounded-circle avatar-image" alt="avatar">
-                                </li>
-                            </ol>
-
                         </div>
                     </div>
                 </div>
@@ -195,15 +185,15 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <h5 class="modal-title" id="staticBackdropLabel">Titulo do serviço</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <p>Sed leo nisl, posuere at molestie ac, suscipit auctor mauris quis metus tempor orci</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
                 </div>
-                <div class="modal-footer ">
+                <div class="modal-footer">
                     <a class="custom-btn btn text-center mx-auto" href="">
-                        <i class="bi-whatsapp" style="padding-right: 1px;"></i>WhatsApp
+                        <i class="bi-whatsapp" style="padding-right: 2px;"></i>Agende pelo WhatsApp
                     </a>
                 </div>
             </div>

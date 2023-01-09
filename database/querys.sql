@@ -26,3 +26,10 @@ create table contato (
     `whatsapp` varchar(100) not null,
     `email` varchar(100) not null 
 );
+
+create table slide (
+    `id` int not null primary key auto_increment,
+    `imagem` varchar(100) not null,
+    `titulo` varchar (20) not null,
+    `descricao` varchar(50) not null
+);

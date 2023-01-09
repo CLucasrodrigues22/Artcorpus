@@ -25,6 +25,28 @@ class Route extends Bootstrap {
                 'action' => 'index'
             );
 
+            // Lista de slides
+            $routes['/listslide'] = array (
+                'route' => '/listslide',
+                'controller' => 'SlideController',
+                'action' => 'index'
+            );
+
+            // Formulário de slides
+            $routes['/createslide'] = array (
+                'route' => '/createslide',
+                'controller' => 'SlideController',
+                'action' => 'create'
+            );
+
+            // Salvar slides
+            $routes['/storeslide'] = array (
+                'route' => '/storeslide',
+                'controller' => 'SlideController',
+                'action' => 'store'
+            );
+
+
             // Lista de todos os usuários
             $routes['/listusers'] = array (
                 'route' => '/listusers',
@@ -122,6 +144,7 @@ class Route extends Bootstrap {
                 'controller' => 'ContatoController',
                 'action' => 'setContato'
             );
+            
 
         // Rotas de Sessão do usuário
             // Rota de formulário de login

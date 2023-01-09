@@ -11,13 +11,18 @@
                 <div class="card-body">
                     <form method="post" action="/storeservice" enctype="multipart/form-data">
                         <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupFile01">Imagem do Serviço</label>
+                            <input type="file" class="form-control" id="inputGroupFile01" name="imagem" required>
+                        </div>
+                        
+                        <div class="input-group mb-3">
                             <span class="input-group-text" id="nome-servico">Nome do Serviço</span>
                             <input type="text" class="form-control" placeholder="Nome do Serviço" aria-label="Nome do Serviço" aria-describedby="nome-servico" name="nome" required>
                         </div>
                         
                         <div class="input-group mb-3">
-                            <label class="input-group-text" for="inputGroupFile01">Imagem do Serviço</label>
-                            <input type="file" class="form-control" id="inputGroupFile01" name="imagem" required>
+                            <span class="input-group-text" id="descricao">Descrição do serviço</span>
+                            <textarea id="descricao" class="form-control" aria-describedby="basic-icon-default-message2" name="descricao" rows="5" style="resize: none;"></textarea>
                         </div>
                         <button type="submit" class="btn btn-success">Salvar dados</button>
                     </form>

@@ -166,7 +166,7 @@ strong {
   SECTION               
 -----------------------------------------*/
 .section-padding {
-  padding-top: 100px;
+  padding-top: 220px;
   padding-bottom: 100px;
 }
 
@@ -549,7 +549,7 @@ strong {
   HERO & HERO SLIDE         
 -----------------------------------------*/
 .hero-section-full-height {
-  height: 680px;
+  height: 46rem;
   min-height: 680px;
   position: relative;
 }
@@ -560,12 +560,27 @@ strong {
 }
 
 #hero-slide .carousel-item {
-  height: 680px;
+  height: 55rem;
   min-height: 680px;
 }
 
 #hero-slide .carousel-caption {
   color: var(--secondary-color);
+}
+
+
+#hero-slide .carousel-caption {
+  background: var(--white-color);
+  clip-path: polygon(100% 100%, 100% 150px, 0 100%);
+  color: var(--secondary-color);
+  top: 1px;
+  bottom: -1px;
+  right: 0;
+  left: auto;
+  text-align: right;
+  min-width: 680px;
+  min-height: 680px;
+  padding: 100px 100px 50px 100px;
 }
 
 #hero-slide .carousel-caption h3 {
@@ -579,7 +594,7 @@ strong {
 .carousel-image {
   display: block;
   width: 100%;
-  min-height: 680px;
+  min-height: 902px;
 }
 
 #hero-slide .carousel-indicators-wrap {
@@ -922,299 +937,6 @@ blockquote::before {
   height: 150px;
 }
 
-
-/*---------------------------------------
-  TESTIMONIAL CAROUSEL              
------------------------------------------*/
-.testimonial-section {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-.testimonial-section::before {
-  content: "";
-  background-color: #ba458b;
-  border-radius: 50%;
-  position: absolute;
-  top: -100px;
-  left: -30px;
-  margin: auto;
-  width: 250px;
-  height: 250px;
-}
-
-.testimonial-section::after {
-  content: "";
-  background: #ba458b;
-  border-radius: 50%;
-  position: absolute;
-  bottom: -110px;
-  right: -80px;
-  width: 350px;
-  height: 350px;
-}
-
-#testimonial-carousel .carousel-caption {
-  position: relative;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
-
-#testimonial-carousel .carousel-title {
-  background: var(--section-bg-color);
-  line-height: normal;
-  margin-bottom: 30px;
-}
-
-#testimonial-carousel .carousel-title::before {
-  content: open-quote;
-  color: var(--p-color);
-  font-size: var(--h1-font-size);
-  position: relative;
-  top: 10px;
-  right: 10px;
-}
-
-#testimonial-carousel .carousel-title::after {
-  content: close-quote;
-  color: var(--p-color);
-  font-size: var(--h1-font-size);
-  position: relative;
-  top: 10px;
-  left: 10px;
-}
-
-#testimonial-carousel .carousel-title {
-  quotes: "“" "”" "‘" "’";
-}
-
-#testimonial-carousel .carousel-name {
-  background: #ba458b;
-  border-radius: var(--border-radius-medium);
-  position: relative;
-  overflow: hidden;
-  padding: 10px 20px;
-}
-
-#testimonial-carousel .carousel-name::before {
-  content: "";
-  position: absolute;
-  top: -10px;
-  right: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  margin: auto;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #ba458b;
-}
-
-.carousel-name-title {
-  font-weight: var(--font-weight-semibold);
-}
-
-#testimonial-carousel .carousel-indicators {
-  position: relative;
-  top: 150px;
-  bottom: auto;
-  margin-top: 50px;
-  margin-bottom: 150px;
-}
-
-#testimonial-carousel .carousel-indicators li {
-  text-indent: inherit;
-  background: transparent;
-  margin: 0 10px; 
-}
-
-#testimonial-carousel .carousel-indicators li,
-#testimonial-carousel .carousel-indicators li::before {
-  width: 45px;
-  height: 45px; 
-}
-
-#testimonial-carousel .carousel-indicators .avatar-image {
-  width: 45px;
-  height: 45px; 
-}
-
-#testimonial-carousel .carousel-indicators .active,
-#testimonial-carousel .carousel-indicators .active .avatar-image {
-  background: transparent;
-  width: 50px; 
-  height: 50px;
-}
-
-
-/*---------------------------------------
-  CONTACT               
------------------------------------------*/
-.contact-section {
-  background: var(--white-color);
-}
-
-.contact-form {
-  background: var(--section-bg-color);
-  border-radius: var(--border-radius-small);
-  padding: 40px;
-}
-
-.contact-info-wrap {
-  padding-top: 40px;
-}
-
-.contact-image-wrap {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-  margin-top: 20px;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-  width: 100%;
-}
-
-
-/*---------------------------------------
-  CUSTOM FORM               
------------------------------------------*/
-.custom-form .form-control,
-.input-group-file {
-  background-color: var(--section-bg-color);
-  box-shadow: none;
-  border: 0;
-  color: var(--p-color);
-  margin-bottom: 24px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  outline: none;
-}
-
-.custom-form .form-control:hover,
-.custom-form .form-control:focus {
-  border-color: var(--secondary-color);
-}
-
-.custom-form label {
-  margin-bottom: 10px;
-}
-
-.custom-form .form-check-group {
-  margin-bottom: 20px;
-}
-
-.donate-form .form-check-group-donation-frequency {
-  padding-right: 0;
-}
-
-.form-check-group-donation-frequency + .form-check-group-donation-frequency {
-  padding-right: 12px;
-  padding-left: 0;
-}
-
-.form-check-group-donation-frequency .form-check-label {
-  font-weight: var(--font-weight-semibold);
-}
-
-#DonationFrequencyOne {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-
-#DonationFrequencyMonthly {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-
-.custom-form .form-check-radio {
-  position: relative;
-  height: 100%;
-  padding-left: 0;
-}
-
-.custom-form .input-group-text {
-  background: var(--secondary-color);
-  border: 0;
-  color: var(--white-color);
-}
-
-.custom-form .form-check-radio .form-check-label {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-
-.form-check-radio .form-check-input[type=radio] {
-  background-color: var(--section-bg-color);
-  border-radius: .25rem;
-  border: 0;
-  box-shadow: none;
-  outline: none;
-  width: 100%;
-  margin-top: 0;
-  margin-left: 0;
-  padding: 25px 50px;
-  transition: all 0.5s;
-}
-
-.form-check-radio .form-check-input:checked[type=radio] {
-  background-image: none;
-}
-
-.form-check-radio .form-check-input:checked[type=radio] + .form-check-label,
-.form-check-radio .form-check-input:hover + .form-check-label,
-.form-check-radio .form-check-input:checked + .form-check-label {
-  color: var(--white-color);
-}
-
-.form-check-radio .form-check-input:hover,
-.form-check-radio .form-check-input:checked {
-  background-color: var(--secondary-color);
-  border-color: var(--white-color);
-}
-
-.input-group-file {
-  border-radius: .25rem;
-  padding: 13px .75rem;
-}
-
-.input-group-file input[type=file] {
-  width: 0.1px;
-  height: 0.1px;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: -1;
-  padding: 0;
-}
-
-.input-group-file .input-group-text {
-  background: transparent;
-  color: inherit;
-  margin-bottom: 0;
-  padding: 0;
-}
-
-.custom-form button[type="submit"] {
-  background: var(--custom-btn-bg-color);
-  border: none;
-  border-radius: var(--border-radius-large);
-  color: var(--white-color);
-  font-size: var(--p-font-size);
-  font-weight: var(--font-weight-semibold);
-  transition: all 0.3s;
-  margin-bottom: 0;
-}
-
-.custom-form button[type="submit"]:hover,
-.custom-form button[type="submit"]:focus {
-  background: var(--custom-btn-bg-hover-color);
-  border-color: transparent;
-}
-
-
 /*---------------------------------------
   CONTACT SEARCH & DONATE & SUBCRIBE FORM              
 -----------------------------------------*/
@@ -1259,6 +981,14 @@ blockquote::before {
   margin-bottom: 0;
 }
 
+/*---------------------------------------
+  DUVIDAS              
+-----------------------------------------*/
+.accordion-button:not(.collapsed) {
+  color: #ba458b;
+  background-color: var(--bs-accordion-active-bg);
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
 
 /*---------------------------------------
   SITE FOOTER              
