@@ -68,6 +68,48 @@ class Route extends Bootstrap {
                 'action' => 'delete'
             );
 
+            // Lista de todas as dúvidas
+            $routes['/listduvidas'] = array (
+                'route' => '/listduvidas',
+                'controller' => 'DuvidaController',
+                'action' => 'index'
+            );
+
+            // Formulário de cadastro de Dúvida
+            $routes['/createduvida'] = array (
+                'route' => '/createduvida',
+                'controller' => 'DuvidaController',
+                'action' => 'create'
+            );
+
+            // Salvar dados de dúvida
+            $routes['/storeduvida'] = array (
+                'route' => '/storeduvida',
+                'controller' => 'DuvidaController',
+                'action' => 'store'
+            );
+
+            // Mostra dados de dúvida
+            $routes['/showduvida'] = array (
+                'route' => '/showduvida',
+                'controller' => 'DuvidaController',
+                'action' => 'show'
+            );
+
+            // Salvar dados de dúvida
+            $routes['/updateduvida'] = array (
+                'route' => '/updateduvida',
+                'controller' => 'DuvidaController',
+                'action' => 'update'
+            );
+
+            // Deleta dados de dúvida
+            $routes['/deleteduvida'] = array (
+                'route' => '/deleteduvida',
+                'controller' => 'DuvidaController',
+                'action' => 'delete'
+            );
+
             // Lista de todos os usuários
             $routes['/listusers'] = array (
                 'route' => '/listusers',

@@ -1,0 +1,28 @@
+<div class="container-xxl flex-grow-1 container-p-y">
+    <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Formulário/</span> Edição de Serviços</h4>
+
+    <div class="row">
+        <div class="col-xl">
+            <div class="card mb-4">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <h5 class="mb-0">Dados do Serviço</h5>
+                    <small class="float-end" style="color: red;">Todos os campos são obrigatórios</small>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="/updateduvida?id=<?= $this->view->dados['id'] ?>">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="titulo-duvida">Título da Dúvida</span>
+                            <input type="text" class="form-control" placeholder="Título da Dúvida" aria-label="Título da Dúvida" aria-describedby="titulo-duvida" value="<?= $this->view->dados['titulo'] ?>" name="titulo" required>
+                        </div>
+                        
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="duvida">Resposta da Dúvida</span>
+                            <textarea id="duvida" class="form-control" aria-describedby="basic-icon-default-message2" name="duvida" rows="5" style="resize: none;"><?= $this->view->dados['duvida'] ?></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

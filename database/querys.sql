@@ -33,3 +33,9 @@ create table slide (
     `titulo` varchar (20) not null,
     `descricao` varchar(50) not null
 );
+
+create table duvida (
+    `id` int not null primary key auto_increment,
+    `titulo` varchar(100) not null,
+    `duvida` varchar(1000) not null
+);
