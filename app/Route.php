@@ -39,6 +39,7 @@ class Route extends Bootstrap {
                 'action' => 'create'
             );
 
+            
             // Salvar slides
             $routes['/storeslide'] = array (
                 'route' => '/storeslide',
@@ -46,6 +47,26 @@ class Route extends Bootstrap {
                 'action' => 'store'
             );
 
+            // Edição de slide
+            $routes['/showslide'] = array (
+                'route' => '/showslide',
+                'controller' => 'SlideController',
+                'action' => 'show'
+            );
+
+            // Salvar edição de slide
+            $routes['/updateslide'] = array (
+                'route' => '/updateslide',
+                'controller' => 'SlideController',
+                'action' => 'update'
+            );
+
+            // Deletar slide
+            $routes['/deleteslide'] = array (
+                'route' => '/deleteslide',
+                'controller' => 'SlideController',
+                'action' => 'delete'
+            );
 
             // Lista de todos os usuários
             $routes['/listusers'] = array (
