@@ -13,23 +13,18 @@ class PublicController extends Action
 {
     public function index()
     {
-        session_start();
-        if ($_SESSION['id'] != '') {
-            $slide = Container::getModel('Slide');
-            $this->view->slide = $slide->showAll();
-            
-            $service = Container::getModel('Service');
-            $this->view->service = $service->showServicos();
+        $slide = Container::getModel('Slide');
+        $this->view->slide = $slide->showAll();
 
-            $duvida = Container::getModel('Duvida');
-            $this->view->duvida = $duvida->showAll();
+        $servico = Container::getModel('Servico');
+        $this->view->servico = $servico->showServicos();
 
-            $usuario = Container::getModel('Usuario');
-            $this->view->usuario = $usuario->showUsers();
+        $duvida = Container::getModel('Duvida');
+        $this->view->duvida = $duvida->showAll();
 
-            $this->view('public/index', 'layoutPublic');
-        } else {
-            header('Location: /authuserdata?login=erro');
-        }
+        $contato = Container::getModel('Contato');
+        $this->view->contato = $contato->showData();
+
+        $this->view('public/index', 'layoutPublic');
     }
 }
