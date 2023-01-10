@@ -211,8 +211,8 @@ class Route extends Bootstrap {
 
         // Rotas de Sessão do usuário
             // Rota de formulário de login
-            $routes['login'] = array (
-                'route' => '/',
+            $routes['authcontrollercontent'] = array (
+                'route' => '/authcontrollercontent',
                 'controller' => 'AuthController',
                 'action' => 'index'
             );

@@ -9,6 +9,13 @@ class PrivateController extends Action
 {
     public function index()
     {
-        $this->view('private/home/index', 'layoutPrivate');
+        session_start();
+        if ($_SESSION['id'] != '')
+        {
+            $this->view('private/home/index', 'layoutPrivate');
+        } else 
+        {
+            header('Location: /authuserdata?login=erro');
+        }
     }
 }
