@@ -1,1 +1,143 @@
-<h1>Index</h1>
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+        <div class="col-lg-8 mb-4">
+            <div class="col-md">
+                <h5 class="my-4">Slides Principais</h5>
+                <div id="slidescarousel" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <?php foreach ($this->view->slide as $key => $slide) : ?>
+                            <div class="carousel-item <?= $key == 0 ? 'active' : '' ?> ">
+                                <img class="d-block w-100" src="storage/slides/<?= $slide['imagem'] ?>" alt="First slide" style="height: 55%;">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h3><?= $slide['titulo'] ?></h3>
+                                    <p><?= $slide['descricao'] ?></p>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <?php
+                    if (isset($this->view->slide)) {
+                        echo '
+                            <a class="carousel-control-prev" href="#slidescarousel" role="button" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Anterior</span>
+                            </a>
+                            <a class="carousel-control-next" href="#slidescarousel" role="button" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Próximo</span>
+                            </a>';
+                    } else {
+                        echo '';
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-4">
+            <div class="col-md">
+                <h5 class="my-4">Lista de Usuários</h5>
+                <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h5 class="card-title m-0 me-2">Lista</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="p-0 m-0">
+                            <?php foreach ($this->view->usuario as $key => $usuario) : ?>
+                                <li class="d-flex mb-4 pb-1">
+                                    <div class="avatar flex-shrink-0 me-3">
+                                        <img src="storage/users/<?= $usuario['imagem'] ?>" alt="User" class="rounded">
+                                    </div>
+                                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                                        <div class="me-2">
+                                            <h6 class="mb-0"><?= $usuario['nome'] ?></h6>
+                                            <small class="text-muted d-block mb-1"><?= $usuario['usuario'] ?></small>
+                                        </div>
+                                        <div class="user-progress d-flex align-items-center gap-1">
+                                            <a href="/showuser?id=<?= $usuario['id'] ?>" class="btn btn-sm btn-warning"><i class='bx bx-pencil'></i></a>
+                                            <a href="/deleteuser?id=<?= $usuario['id'] ?>" class="btn btn-sm btn-danger"><i class='bx bx-trash'></i></a>
+                                        </div>
+                                    </div>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <hr>
+                        <div class="text-center" style="padding-top: 2%;">
+                            <a href="/createuser" class="btn btn-success">Adicionar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <div class="col-md">
+                <h5 class="my-4">Todos os Serviços</h5>
+                <div id="servicoscarousel" class="carousel carousel-dark slide carousel-fade" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <?php foreach ($this->view->servico as $key => $servico) : ?>
+                            <div class="carousel-item <?= $key == 0 ? 'active' : '' ?> ">
+                                <div class="card h-100" style="padding-left: 10%; padding-right: 10%;">
+                                    <img class="card-img-top rounded" src="storage/servicos/<?= $servico['imagem'] ?>" alt="card servico">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?= $servico['nome'] ?></h5>
+                                        <p class="card-text">
+                                            <?= $servico['descricao'] ?>
+                                        </p>
+                                        <a href="/showservice?id=<?= $servico['id'] ?>" class="btn btn-info">Editar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <?php
+                    if (isset($this->view->slide)) {
+                        echo '<a class="carousel-control-prev" href="#servicoscarousel" role="button" data-bs-slide="prev" style="padding-bottom: 27%;">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Anterior</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#servicoscarousel" role="button" data-bs-slide="next" style="padding-bottom: 27%;">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Próximo</span>
+                                        </a>';
+                    } else {
+                        echo '';
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <div class="col-md">
+                <h5 class="my-4">Dúvidas Frequentes</h5>
+                <div class="card h-100">
+                    <div class="card-header d-flex align-items-center justify-content-between">
+                        <h5 class="card-title m-0 me-2">Lista de Dúvidas</h5>
+                    </div>
+                    <div class="card-body" style="padding-bottom: 2%;">
+                        <div class="w-100 flex-wrap align-items-center justify-content-between gap-2">
+                            <?php foreach ($this->view->duvida as $key => $duvida) { ?>
+                                <div class="card accordion-item" style="margin-bottom: 5%;">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#<?= 'duvida' . $duvida['id'] ?>" aria-expanded="false" aria-controls="<?= 'duvida' . $duvida['id'] ?>">
+                                            <?= $duvida['titulo'] ?>
+                                        </button>
+                                    </h2>
+
+                                    <div id="<?= 'duvida' . $duvida['id'] ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            <strong>Resposta:</strong> <?= $duvida['duvida'] ?><br>
+                                            <a href="/showduvida?id=<?= $duvida['id'] ?>" class="btn btn-sm btn-info" style="margin-top: 10px;">Editar</a>
+                                            <a href="/deleteduvida?id=<?= $duvida['id'] ?>" class="btn btn-sm btn-danger" style="margin-top: 10px;">Deletar</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php } ?>
+                            <div class="text-center">
+                                <a href="/listduvidas" class="btn btn-info" style="margin-top: 10px;">Ver Todas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,6 +9,7 @@ create table usuarios (
 create table servicos (
     `id` int not null primary key auto_increment,
     `nome` varchar(50) not null,
+    `descricao` varchar(500) not null,
     `imagem` varchar(100)
 );
 
@@ -24,7 +25,8 @@ create table contato (
     `localizacao` varchar(500) not null,
     `instagram` varchar(100) not null,
     `whatsapp` varchar(100) not null,
-    `email` varchar(100) not null 
+    `email` varchar(100) not null,
+    `sobre` varchar(1000) not null
 );
 
 create table slide (

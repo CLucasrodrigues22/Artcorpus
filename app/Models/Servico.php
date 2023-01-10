@@ -8,6 +8,7 @@ class Servico extends Model
 {
     private $id;
     private $nome;
+    private $descricao;
     private $imagem;
 
     public function __get($attr)

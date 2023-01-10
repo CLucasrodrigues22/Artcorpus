@@ -151,6 +151,13 @@ class Route extends Bootstrap {
                 'controller' => 'UserController',
                 'action' => 'delete'
             );
+
+            // Alterar Senha do usuário
+            $routes['/updatepassword'] = array (
+                'route' => '/updatepassword',
+                'controller' => 'UserController',
+                'action' => 'alterSenha'
+            );
             
             // Lista de Todos os serviços
             $routes['/listservices'] = array (

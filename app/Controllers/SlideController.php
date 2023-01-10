@@ -17,7 +17,7 @@ class SlideController extends Action
             $this->view('private/slide/index', 'layoutPrivate');
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 
@@ -29,7 +29,7 @@ class SlideController extends Action
             $this->view('private/slide/create', 'layoutPrivate');
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 
@@ -93,7 +93,7 @@ class SlideController extends Action
             }
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 
@@ -108,7 +108,7 @@ class SlideController extends Action
             $this->view('private/slide/show', 'layoutPrivate');
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 
@@ -182,7 +182,7 @@ class SlideController extends Action
             }
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 
@@ -222,7 +222,7 @@ class SlideController extends Action
             }
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 }

@@ -20,6 +20,10 @@
                             <input value="<?= $this->view->dados['nome'] ?>" type ="text" class="form-control" placeholder="Nome do Serviço" aria-label="Nome do Serviço" aria-describedby="nome-servico" name="nome" required>
                         </div>
                         
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="descricao">Descrição do serviço</span>
+                            <textarea id="descricao" class="form-control" aria-describedby="basic-icon-default-message2" name="descricao" rows="5" style="resize: none;"><?= $this->view->dados['descricao'] ?></textarea>
+                        </div>
                         <button type="submit" class="btn btn-success">Salvar dados</button>
                     </form>
                 </div>

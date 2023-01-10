@@ -1,11 +1,11 @@
 <div class="container-xxl flex-grow-1 container-p-y">
     <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Lista /</span> Todos os Serviços</h4>
 
-    <?php foreach ($this->view->dados as $key => $servico) { ?>
-        <div class="row mb-5">
+    <div class="row mb-5">
+        <?php foreach ($this->view->dados as $key => $servico) { ?>
             <div class="col-md-6 col-lg-3 mb-3">
                 <div class="card h-100">
-                    <img class="card-img-top" src="storage/servicos/<?= $servico['imagem'] ?>" alt="Imagem do serviço" style="padding: 10%;">
+                    <img class="card-img-top" src="storage/servicos/<?= $servico['imagem'] ?>" alt="Imagem do serviço" style="padding: 10%;width: 100%;height: 55%;">
                     <div class="card-body">
                         <h5 class="card-title">Nome: <strong><?= $servico['nome'] ?></strong></h5>
                         <p><?= $servico['descricao'] ?></p>
@@ -14,6 +14,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    <?php } ?>
+        <?php } ?>
+    </div>
 </div>

@@ -12,23 +12,29 @@
                     <form method="post" action="/storeuser" enctype="multipart/form-data">
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="nome-completo">Nome Completo</span>
-                            <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Nome Completo" aria-describedby="nome-completo" name="nome">
+                            <input type="text" class="form-control" placeholder="Nome Completo" aria-label="Nome Completo" aria-describedby="nome-completo" name="nome" required>
                         </div>
 
                         <div class="input-group mb-3">
                             <span class="input-group-text" id="basic-addon11">Nome de Usuário</span>
-                            <input type="text" class="form-control" placeholder="Usuário" aria-label="Usuário" aria-describedby="basic-addon11" name="usuario">
+                            <input type="text" class="form-control" placeholder="Usuário" aria-label="Usuário" aria-describedby="basic-addon11" name="usuario" required>
                         </div>
-                        
-                        <div class="input-group mb-3">
-                            <span class="input-group-text" id="basic-default-password12">Senha</span>
-                            <input type="password" name="senha" class="form-control" id="basic-default-password12" placeholder="············" aria-describedby="basic-default-password2">
-                            <span id="basic-default-password2" class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                        <small>Requisitor para a Senha</small>
+                        <ul>
+                            <li>Minimo 8 Caracteres</li>
+                            <li>Letras e Números</li>
+                        </ul>
+                        <div class="form-password-toggle">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text" id="passwordcampo">Senha</span>
+                                <input type="password" class="form-control" id="basic-default-password12" placeholder="············" aria-describedby="passwordcampo" minlength="8" pattern="[0-9a-zA-Z]{0,9}" required>
+                                <span id="basic-default-password2" class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                            </div>
                         </div>
-                        
+
                         <div class="input-group mb-3">
                             <label class="input-group-text" for="inputGroupFile01">Foto de Perfil</label>
-                            <input type="file" class="form-control" id="inputGroupFile01" name="imagem">
+                            <input type="file" class="form-control" id="inputGroupFile01" name="imagem" required>
                         </div>
                         <button type="submit" class="btn btn-success">Salvar dados</button>
                     </form>

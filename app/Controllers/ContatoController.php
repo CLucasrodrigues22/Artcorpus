@@ -17,7 +17,7 @@ class ContatoController extends Action
             $this->view('private/contato/index', 'layoutPrivate');
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 
@@ -62,13 +62,13 @@ class ContatoController extends Action
                 if ($e->errorInfo[1]) {
                     echo $e;
                     $erro = $e->errorInfo[1];
-                    $feedback = 'deleteerror';
+                    $feedback = 'createerror';
                     header("Location: /listservices?feedback=$feedback&error=$erro");
                 }
             }
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 }

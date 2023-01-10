@@ -7,12 +7,12 @@
                 <?php foreach ($this->view->dados as $key => $duvida) { ?>
                     <div class="card accordion-item">
                         <h2 class="accordion-header" id="headingOne">
-                            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#accordionOne" aria-expanded="false" aria-controls="accordionOne">
+                            <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#<?= 'duvida'.$duvida['id'] ?>" aria-expanded="false" aria-controls="<?= 'duvida'.$duvida['id'] ?>">
                                 <?= $duvida['titulo'] ?>
                             </button>
                         </h2>
 
-                        <div id="accordionOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div id="<?= 'duvida'.$duvida['id'] ?>" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                             <div class="accordion-body">
                                 <strong>Resposta:</strong> <?= $duvida['duvida'] ?><br>
                                 <a href="/showduvida?id=<?= $duvida['id'] ?>" class="btn btn-sm btn-info" style="margin-top: 10px;">Editar</a>  
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div>
-                <?php } ?>
+                <?php } ?> 
             </div>
         </div>
     </div>

@@ -66,4 +66,14 @@ class Usuario extends Model
         $q = "delete from usuarios where id = $id";
         return $this->db->query($q);
     }
+
+    public function alterPassword($id)
+    {
+        $q = "update usuarios set senha = :senha where id = $id";
+        $stmt = $this->db->prepare($q);
+        $stmt->bindValue(':senha', $this->__get('senha'));
+        $stmt->execute();
+
+        return $this;
+    }
 }

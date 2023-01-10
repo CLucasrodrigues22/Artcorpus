@@ -17,7 +17,7 @@ class DuvidaController extends Action
             $this->view('private/duvida/index', 'layoutPrivate');
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 
@@ -29,7 +29,7 @@ class DuvidaController extends Action
             $this->view('private/duvida/create', 'layoutPrivate');
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 
@@ -56,7 +56,7 @@ class DuvidaController extends Action
             }
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 
@@ -71,7 +71,7 @@ class DuvidaController extends Action
             $this->view('private/duvida/show', 'layoutPrivate');
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 
@@ -99,7 +99,7 @@ class DuvidaController extends Action
             }
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 
@@ -116,7 +116,7 @@ class DuvidaController extends Action
             exit;
         } else 
         {
-            header('Location: /authuserdata?login=erro');
+            header('Location: /authcontrollercontent?login=erro');
         }
     }
 }
