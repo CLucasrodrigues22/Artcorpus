@@ -10,6 +10,7 @@ class Usuario extends Model
     private $id;
     private $nome;
     private $usuario;
+    private $email;
     private $senha;
     private $imagem;
 
@@ -31,10 +32,11 @@ class Usuario extends Model
 
     public function create()
     {
-        $q = "insert into usuarios (nome, usuario, senha, imagem) values (:nome, :usuario, :senha, :imagem) ";
+        $q = "insert into usuarios (nome, usuario, email, senha, imagem) values (:nome, :usuario, :email, :senha, :imagem) ";
         $stmt = $this->db->prepare($q);
         $stmt->bindValue(':nome', $this->__get('nome'));
         $stmt->bindValue(':usuario', $this->__get('usuario'));
+        $stmt->bindValue(':email', $this->__get('email'));
         $stmt->bindValue(':senha', $this->__get('senha'));
         $stmt->bindValue(':imagem', $this->__get('imagem'));
         $stmt->execute();
@@ -50,10 +52,11 @@ class Usuario extends Model
 
     public function update($id)
     {
-        $q = "update usuarios set nome = :nome, usuario = :usuario, senha = :senha, imagem = :imagem where id = $id";
+        $q = "update usuarios set nome = :nome, usuario = :usuario, email = :email, senha = :senha, imagem = :imagem where id = $id";
         $stmt = $this->db->prepare($q);
         $stmt->bindValue(':nome', $this->__get('nome'));
         $stmt->bindValue(':usuario', $this->__get('usuario'));
+        $stmt->bindValue(':email', $this->__get('email'));
         $stmt->bindValue(':senha', $this->__get('senha'));
         $stmt->bindValue(':imagem', $this->__get('imagem'));
         $stmt->execute();

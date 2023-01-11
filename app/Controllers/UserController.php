@@ -90,6 +90,7 @@ class UserController extends Action
                 // Setando demais atributos
                 $usuario->__set('nome', $_POST['nome']);
                 $usuario->__set('usuario', $_POST['usuario']);
+                $usuario->__set('email', $_POST['email']);
                 $usuario->__set('senha', password_hash($_POST['senha'], PASSWORD_BCRYPT));
                 $usuario->create();
 
@@ -184,6 +185,7 @@ class UserController extends Action
 
                 $usuario->__set('nome', $_POST['nome']);
                 $usuario->__set('usuario', $_POST['usuario']);
+                $usuario->__set('email', $_POST['email']);
                 $usuario->__set('senha', $senhaOld['senha']);
 
                 // Validar condições estabelecidas no model e depois enviando dados atributos setados para o model inserir no banco

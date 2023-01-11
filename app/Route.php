@@ -236,7 +236,37 @@ class Route extends Bootstrap {
                 'route' => '/logout',
                 'controller' => 'AuthController',
                 'action' => 'logout'
-            );            
+            ); 
+            
+        // Rotas para recuperação de senha
+            // Fomulário de reculperação
+            $routes['recovery'] = array (
+                'route' => '/recovery',
+                'controller' => 'RecoveryController',
+                'action' => 'index'
+            );
+
+            // Valida e envia email de reculperação
+            $routes['recoverypwd'] = array (
+                'route' => '/recoverypwd',
+                'controller' => 'RecoveryController',
+                'action' => 'validate'
+            );
+
+            // Formulario de atualização de senha
+            $routes['updatepwd'] = array (
+                'route' => '/updatepwd',
+                'controller' => 'RecoveryController',
+                'action' => 'formUpdate'
+            );
+
+            // Salvar nova senha
+            $routes['storenewpwd'] = array (
+                'route' => '/storenewpwd',
+                'controller' => 'RecoveryController',
+                'action' => 'update'
+            );
+
         $this->setRoutes($routes);
     }
 }

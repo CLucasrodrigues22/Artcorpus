@@ -1,0 +1,55 @@
+<!-- Content -->
+
+<div class="container-xxl">
+    <div class="authentication-wrapper authentication-basic container-p-y">
+        <div class="authentication-inner">
+            <!-- Register -->
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="mb-2">Gerenciamento de Conteúdo</h4>
+
+                    <form id="formAuthentication" class="mb-3" action="/storenewpwd" method="POST">
+                        <div class="mb-3 form-password-toggle">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label" for="password">Nova Senha</label>
+                            </div>
+                            <div class="input-group input-group-merge">
+                                <input type="password" id="password" class="form-control" name="password" aria-describedby="password">
+                                <!-- <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span> -->
+                            </div>
+                        </div>
+                        <div class="mb-3 form-password-toggle">
+                            <div class="d-flex justify-content-between">
+                                <label class="form-label" for="password">Digite Novamente</label>
+                            </div>
+                            <div class="input-group input-group-merge">
+                                <input type="password" id="senha" class="form-control" name="senha" aria-describedby="password">
+                                <!-- <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span> -->
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <button class="btn btn-success w-100" onclick="return validar()" type="submit">Salvar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function validar() {
+        let novaSenha = formAuthentication.password.value;
+        let senha = formAuthentication.senha.value;
+
+        if (novaSenha === '' || novaSenha <= 8) {
+            swal("Atenção!", "A senha precisa ter no minimo 8 caracteres!", "warning");
+            formAuthentication.novaSenha.focus();
+            return false;
+        } else if (novaSenha != senha || senha <= 8) {
+            swal("Atenção!", "A senhas não são iguais!", "warning");
+            formAuthentication.novaSenha.focus();
+            return false;
+        }
+    }
+</script>
