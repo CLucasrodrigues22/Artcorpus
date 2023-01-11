@@ -1,3 +1,10 @@
+public/storage/slides/*.png
+public/storage/slides/*.jpg
+public/storage/servicos/*.png
+public/storage/servicos/*.jpg
+public/storage/users/*.png
+public/storage/users/*.jpg
+
 # JPEG
 *.jpg
 *.jpeg

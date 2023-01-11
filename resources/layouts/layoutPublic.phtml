@@ -27,23 +27,22 @@
                 <div class="col-lg-8 col-12 d-flex flex-wrap">
                     <p class="d-flex me-4 mb-0">
                         <i class="bi-geo-alt me-2"></i>
-                        Clsw 303, Bloco C Ed. Le Parc, Loja 65 Subsolo - Sudoeste - DF
+                        <?= $this->view->contato['logradouro'].' - '.$this->view->contato['complemento'].' - Loja '.$this->view->contato['numero'].' - '.$this->view->contato['bairro'].' - '.$this->view->contato['cidade'].', '.$this->view->contato['uf'].' - '.$this->view->contato['cep'] ?>
                     </p>
                 </div>
 
                 <div class="col-lg-3 col-12 ms-auto d-lg-block d-none">
                     <ul class="social-icon">
-
                         <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-instagram"></a>
+                            <a href="<?= $this->view->contato['instagram'] ?>" class="social-icon-link bi-instagram"></a>
                         </li>
 
                         <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-envelope"></a>
+                            <a href="mailto:<?= $this->view->contato['email'] ?>" class="social-icon-link bi-envelope"></a>
                         </li>
 
                         <li class="social-icon-item">
-                            <a href="https://wa.me/" target="__blank" class="social-icon-link bi-whatsapp"></a>
+                            <a href="https://wa.me/<?= $this->view->contato['whatsapp'] ?>" target="__blank" class="social-icon-link bi-whatsapp"></a>
                         </li>
                     </ul>
                 </div>
@@ -82,7 +81,7 @@
                     </li>
 
                     <li class="nav-item ms-3">
-                        <a class="nav-link custom-btn custom-border-btn btn" href="https://wa.me/" target="__blank"><i class="bi-whatsapp"
+                        <a class="nav-link custom-btn custom-border-btn btn" href="https://wa.me/<?= $this->view->contato['whatsapp'] ?>" target="__blank"><i class="bi-whatsapp"
                                 style="padding-right: 1px;"></i>WhatsApp</a>
                     </li>
                 </ul>
@@ -96,7 +95,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-12 mb-4">
-                    <img src="images/logo.png" class="logo img-fluid" alt="">
+                    <a href="#"><img src="images/logo.png" class="logo img-fluid"></a>
                 </div>
 
                 <div class="col-lg-4 col-md-6 col-12 mb-4">
@@ -120,21 +119,21 @@
                     <p class="d-flex">
                         <i class="bi-envelope me-2"></i>
 
-                        <a href="mailto:info@yourgmail.com" class="site-footer-link">
-                            contato.agendamento@artcorpus.com.br
+                        <a href="mailto:<?= $this->view->contato['email'] ?>" class="site-footer-link">
+                            <?= $this->view->contato['email'] ?>
                         </a>
                     </p>
 
                     <p class="d-flex mt-3">
                         <i class="bi-geo-alt me-2"></i>
-                        Clsw 303, Bloco C Ed. Le Parc, Loja 65 Subsolo - Sudoeste - DF (70673-623)
+                        <?= $this->view->contato['logradouro'].' - '.$this->view->contato['complemento'].' - Loja '.$this->view->contato['numero'].' - '.$this->view->contato['bairro'].' - '.$this->view->contato['cidade'].', '.$this->view->contato['uf'].' - '.$this->view->contato['cep'] ?>
                     </p>
 
-                    <a class="custom-btn btn mt-3" href="https://wa.me/" target="__blank"><i class="bi-whatsapp"
+                    <a class="custom-btn btn mt-3" href="https://wa.me/<?= $this->view->contato['whatsapp'] ?>" target="__blank"><i class="bi-whatsapp"
                             style="padding-right: 1px;"></i>WhatsApp
                     </a>
 
-                    <a class="custom-btn btn mt-3" href=""><i class="bi-geo" style="padding-right: 1px;"></i>Localização
+                    <a class="custom-btn btn mt-3" href="<?= $this->view->contato['localizacao'] ?>"><i class="bi-geo" target="__blank" style="padding-right: 1px;"></i>Localização
                     </a>
                 </div>
             </div>
@@ -143,7 +142,6 @@
         <div class="site-footer-bottom">
             <div class="container">
                 <div class="row">
-
                     <div class="col-lg-6 col-md-7 col-12">
                         <p class="copyright-text mb-0">Copyright ©
                             <script>
@@ -155,13 +153,13 @@
                     <div class="col-lg-6 col-md-5 col-12 d-flex justify-content-center align-items-center mx-auto">
                         <ul class="social-icon">
                             <li class="social-icon-item">
-                                <a href="" class="social-icon-link bi-instagram"></a>
+                                <a href="<?= $this->view->contato['instagram'] ?>" target="__blank" class="social-icon-link bi-instagram"></a>
                             </li>
                             <li class="social-icon-item">
-                                <a href="mailto:" class="social-icon-link bi-envelope"></a>
+                                <a href="mailto:<?= $this->view->contato['email'] ?>" target="__blank" class="social-icon-link bi-envelope"></a>
                             </li>
                             <li class="social-icon-item">
-                                <a href="https://wa.me/" target="__blank" class="social-icon-link bi-whatsapp"></a>
+                                <a href="https://wa.me/<?= $this->view->contato['whatsapp'] ?>" target="__blank" class="social-icon-link bi-whatsapp"></a>
                             </li>
                         </ul>
                     </div>

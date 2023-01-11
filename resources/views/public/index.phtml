@@ -17,8 +17,8 @@
                                 </div>
                             <?php endforeach; ?>
                             <?php
-                                if (isset($this->view->slide)) {
-                                    echo '
+                            if (isset($this->view->slide)) {
+                                echo '
                                         <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide" data-bs-slide="prev">
                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Previous</span>
@@ -27,9 +27,9 @@
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Next</span>
                                         </button>';
-                                } else {
-                                    echo '';
-                                }
+                            } else {
+                                echo '';
+                            }
                             ?>
                         </div>
                     </div>
@@ -45,18 +45,40 @@
                     <h2 class="mb-5">Nossos Serviços</h2>
                 </div>
 
-                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
-                    <div class="featured-block d-flex justify-content-center align-items-center">
-                        <a class="d-block" data-bs-toggle="modal" data-bs-target="#modalservicos">
-                            <img src="images/icons/hands.png" class="featured-block-image img-fluid" alt="">
+                <?php foreach ($this->view->servico as $key => $servico) : ?>
+                    <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                        <div class="featured-block d-flex justify-content-center align-items-center">
+                            <a class="d-block" data-bs-toggle="modal" data-bs-target="#modalservicos<?= $servico['id'] ?>">
+                                <img src="storage/servicos/<?= $servico['imagem'] ?>" class="featured-block-image img-fluid" alt="servicoImagem">
 
-                            <p class="featured-block-text">Become a <strong>volunteer</strong></p>
-                        </a>
+                                <p class="featured-block-text"><?= $servico['nome'] ?></p>
+                            </a>
+                        </div>
                     </div>
-                </div>
+                    <!-- Modal de serviços -->
+                    <div class="modal fade" id="modalservicos<?= $servico['id'] ?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalservicosLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel"><?= $servico['nome'] ?></h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p><?= $servico['descricao'] ?></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <a class="custom-btn btn text-center mx-auto" href="https://wa.me/<?= $this->view->contato['whatsapp'] ?>">
+                                        <i class="bi-whatsapp" style="padding-right: 2px;"></i>Agende pelo WhatsApp
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Fim modal de serviços -->
+                <?php endforeach ?>
 
                 <div class="col-lg-10 col-12 text-center mx-auto">
-                    <a class="custom-btn btn mt-3" href="">Agende Agora
+                    <a class="custom-btn btn mt-3" href="https://wa.me/<?= $this->view->contato['whatsapp'] ?>" target="__blank">Agende Agora
                     </a>
                 </div>
             </div>
@@ -72,52 +94,34 @@
                     <small>Alguma das dúvidas frequentes de nossas clientes.</small>
                     <div id="testimonial-carousel">
 
-                        <div class="accordion m-5" id="accordionExample">
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                        Titulo da dúvida
-                                    </button>
-                                </h2>
-                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        <div class="accordion m-5" id="accordionDuvida">
+                            <?php foreach ($this->view->duvida as $key => $duvida) { ?>
+                                <div class="card accordion-item" style="margin-bottom: 1%;">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button type="button" class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#<?= 'duvida' . $duvida['id'] ?>" aria-expanded="false" aria-controls="<?= 'duvida' . $duvida['id'] ?>">
+                                            <?= $duvida['titulo'] ?>
+                                        </button>
+                                    </h2>
+
+                                    <div id="<?= 'duvida' . $duvida['id'] ?>" class="accordion-collapse collapse" data-bs-parent="#accordionDuvida">
+                                        <div class="accordion-body">
+                                            <strong>Resposta:</strong> <?= $duvida['duvida'] ?><br>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        Titulo da dúvida
-                                    </button>
-                                </h2>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                        Titulo da dúvida
-                                    </button>
-                                </h2>
-                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                    <div class="accordion-body">
-                                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-                                    </div>
-                                </div>
-                            </div>
+                            <?php } ?>
                         </div>
                     </div>
                 </div>
-
+                <div class="col-lg-10 col-12 text-center mx-auto">
+                    <a class="custom-btn btn mt-3" target="__blank" href="<?= $this->view->contato['localizacao'] ?>">Venha nos conhecer
+                    </a>
+                </div>                     
             </div>
         </div>
     </section>
 
-    <section class="section-padding" id="sobrenos">
+    <section class="section-padding" id="sobrenos" style="padding-top: 100px;">
         <div class="container">
             <div class="row">
 
@@ -125,41 +129,20 @@
                     <div class="col-lg-10 col-12 text-center mx-auto">
                         <h2 class="mb-5">Sobre a Art Corpus</h2>
                     </div>
-                    <div class="custom-text-box">
+                    <div class="custom-text-box text-center">
 
-                        <p class="mb-0">This is a Bootstrap 5.2.2 CSS template for charity organization websites.
-                            You can feel free to use it. Please tell your friends about TemplateMo website. Thank
-                            you.
+                        <p class="mb-0">
+                            <?= $this->view->contato['sobre'] ?>
                         </p>
                     </div>
                 </div>
 
                 <div class="col-lg-10 col-12 text-center mx-auto">
-                    <a class="custom-btn btn mt-3" href="">Venha nos conhecer
+                    <a class="custom-btn btn mt-3" target="__blank" href="<?= $this->view->contato['localizacao'] ?>">Venha nos conhecer
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Modal de serviços -->
-    <div class="modal fade" id="modalservicos" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalservicosLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Titulo do serviço</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. </p>
-                </div>
-                <div class="modal-footer">
-                    <a class="custom-btn btn text-center mx-auto" href="">
-                        <i class="bi-whatsapp" style="padding-right: 2px;"></i>Agende pelo WhatsApp
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Fim modal de serviços -->
 </main>
