@@ -91,7 +91,7 @@ class UserController extends Action
                 $usuario->__set('nome', $_POST['nome']);
                 $usuario->__set('usuario', $_POST['usuario']);
                 $usuario->__set('email', $_POST['email']);
-                $usuario->__set('senha', password_hash($_POST['senha'], PASSWORD_BCRYPT));
+                $usuario->__set('senha', password_hash($_POST['senha'], PASSWORD_DEFAULT));
                 $usuario->create();
 
                 $feedback = 'createsuccess';
@@ -257,7 +257,7 @@ class UserController extends Action
                 // Nova senha
                 $confirmaSenha = $_POST['senha'];
 
-                $usuario->__set('senha', password_hash($confirmaSenha, PASSWORD_BCRYPT));
+                $usuario->__set('senha', password_hash($confirmaSenha, PASSWORD_DEFAULT));
                 $usuario->alterPassword($id);
 
                 $feedback = 'pwdsuccess';

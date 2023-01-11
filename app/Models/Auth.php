@@ -9,6 +9,7 @@ class Auth extends Model
     private $id;
     private $nome;
     private $usuario;
+    private $email;
     private $senha;
     private $imagem;
 
@@ -23,7 +24,7 @@ class Auth extends Model
     // User Validate
     public function validateUser()
     {
-        $q = "select * from usuarios where usuario = :usuario";
+        $q = "select * from usuarios where usuario = :usuario limit 1";
         // $q = "SELECT
         //         U.id,
         //         U.fullname,

@@ -28,18 +28,6 @@ class AuthController extends Action
                 $feedback = 'sessionstart';
                 header("Location: /front?feedback=$feedback");
                 exit;
-                // if ($userdata['status'] == 1) {
-                //     session_start();
-                //     $_SESSION = $userdata;
-                //     $feedback = 'sessionstart'; 
-                //     header("Location: /front?feedback=$feedback");
-                //     exit;
-                // } else
-                // {
-                //     $feedback = 'profiledesatived';
-                //     header("Location: /?feedback=$feedback");
-                //     exit;
-                // }
             } else {
                 $feedback = 'pwdincorret!';
                 header("Location: /authcontrollercontent?feedback=$feedback");
