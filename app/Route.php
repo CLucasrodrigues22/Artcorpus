@@ -96,7 +96,7 @@ class Route extends Bootstrap {
                 'action' => 'show'
             );
 
-            // Salvar dados de dúvida
+            // Salvar dados de duvida
             $routes['/updateduvida'] = array (
                 'route' => '/updateduvida',
                 'controller' => 'DuvidaController',
