@@ -65,7 +65,7 @@ class SlideController extends Action
                     }
     
                     // nome para ser salvo no banco de dados
-                    $namePhoto = md5($imagem[0]) . '-' . date('YmdHmi') . '.' . $extension;
+                    $namePhoto = md5($imagem[0]) . '-' . date('Y-m-dH:i:s') . '.' . $extension;
     
                     // Verifica se é possível mover o arquivo para a pasta escolhida
                     if (move_uploaded_file($_FILES['imagem']['tmp_name'], $upload['diretorio'] . $namePhoto)) {
@@ -151,7 +151,7 @@ class SlideController extends Action
                     }
     
                     // nome para ser salvo no banco de dados
-                    $namePhoto = md5($imagem[0]) . '-' . date('YmdHmi') . '.' . $extension;
+                    $namePhoto = md5($imagem[0]) . '-' . date('Y-m-dH:i:s') . '.' . $extension;
     
                     // Verifica se é possível mover o arquivo para a pasta escolhida
                     if (move_uploaded_file($_FILES['imagem']['tmp_name'], $upload['diretorio'] . $namePhoto)) {
