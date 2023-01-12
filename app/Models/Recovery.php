@@ -21,7 +21,7 @@ class Recovery extends Model
         $this->$attr = $value;
     }
 
-    public function validate()
+    public function validateUser()
     {
         $q = "select * from usuarios where email = :email limit 1";
         $stmt = $this->db->prepare($q);
