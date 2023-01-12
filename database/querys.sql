@@ -41,3 +41,10 @@ create table duvida (
     `titulo` varchar(100) not null,
     `duvida` varchar(1000) not null
 );
+
+create table recoverypwd (
+    `id` int not null primary key auto_increment,
+    `email` varchar(200),
+    `rash` varchar(200),
+    `status` int DEFAULT 0
+);

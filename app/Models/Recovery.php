@@ -6,8 +6,10 @@ use MVC\Model\Model;
 
 class Recovery extends Model
 {
+    private $id;
     private $email;
-    private $usuario;
+    private $rash;
+    private $status;
 
     public function __get($attr)
     {
@@ -21,10 +23,19 @@ class Recovery extends Model
 
     public function validate()
     {
-        $q = "select id, nome, usuario from usuarios where email = :email limit 1";
+        $q = "select * from usuarios where email = :email limit 1";
         $stmt = $this->db->prepare($q);
         $stmt->bindValue(':email', $this->__get('email'));
         $stmt->execute();
         return $stmt->fetch();
+    }
+
+    public function createRecovery()
+    {
+        $q = "insert into recoverypwd (email, rash) values (:email, :rash)";
+        $stmt = $this->db->prepare($q);
+        $stmt->bindValue(':email', $this->__get('email'));
+        $stmt->bindValue(':rash', $this->__get('rash'));
+        $stmt->execute();
     }
 }

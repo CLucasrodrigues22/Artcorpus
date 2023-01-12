@@ -20,9 +20,46 @@ class RecoveryController extends Action
         echo '<pre>';
         if(is_array($datauser))
         {
-            // Enviar Email de reculperação
-            //Gerar chave para a alteração da senha
-            $key = password_hash($datauser['id'], PASSWORD_DEFAULT);
+            try{
+                // Criando rash para alterar a senha
+                $rash = password_hash($datauser['id'], PASSWORD_BCRYPT);
+                $email = $datauser['email'];
+                // Setando attr para enviar para a tabela recoverypwd
+                $datas->__set('email', $email);
+                $datas->__set('rash', $rash);
+                $datas->createRecovery();
+                // Enviando e-mail
+                define("sitedir", "http://localhost/", true);
+                $destinatario = $email;
+                $cript = $rash;
+
+                $assunto = "RECULPERAR SENHA";
+                $headers = "MINE-Version: 1.0\r\n";
+                $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
+                $messagem = "<html><head>";
+                $messagem .= "
+                    <h2>Solicitação de alteração de senha</h2>
+                    <hr>
+                    <h3>Link para alterar senha: <a href='".sitedir."updatepwd?email=$email&rash=$rash'>".sitedir."updatepwd?email=$email&rash=$rash</a></h3>
+                    <hr>
+                    <br>
+                    Antenciosamente, Art Corpus.
+                ";
+                $messagem .= "</head></html>";
+                if(mail($destinatario, $assunto, $messagem, $headers))
+                {
+                    $feedback = 'sendmailsuccess';
+                    header("Location: /authcontrollercontent?feedback=$feedback");
+                    exit;
+                } else 
+                {
+                    $feedback = 'sendmailerror';
+                    header("Location: /authcontrollercontent?feedback=$feedback");
+                    exit;
+                }
+            } catch(\PDOException $e) {
+                echo $e;
+            }
         } else 
         {
             $feedback = 'useruknown';
