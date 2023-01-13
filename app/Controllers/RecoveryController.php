@@ -14,41 +14,44 @@ class RecoveryController extends Action
 
     public function validate()
     {
-        $datas = Container::getModel('Recovery');
+        $datas = Container::getModel('Usuario');
         $datas->__set('email', $_POST['email']);
         $datauser = $datas->validateUser();
         if (is_array($datauser)) {
-            // Criando rash para alterar a senha
-            $rash = password_hash($datauser['id'], PASSWORD_BCRYPT);
-            $email = $datauser['email'];
-            // Setando attr para enviar para a tabela recoverypwd
-            $datas->__set('email', $email);
-            $datas->__set('rash', $rash);
-            $datas->createRecovery();
+            // Criando uma nova senha
+            $newsenha = rand();
+            $rashsenha = password_hash($newsenha, PASSWORD_BCRYPT);
+
             // Enviando e-mail
+            $email = $datauser['email'];
             define("sitedir", "https://artcorpus.com.br/", true);
             $destinatario = $email;
-            $cript = $rash;
 
-            $assunto = "RECUPERAR SENHA";
+            $assunto = "Alteração de senha";
             $headers = "MINE-Version: 1.0\r\n";
             $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
             $messagem = "<html><head>";
             $messagem .= "
-                <h2>Solicitação de alteração de senha</h2>
+                <h2>Solicitação de nova senha</h2>
                 <hr>
-                <h3>Link para alterar senha: <a href='" . sitedir . "updatepwd?email=$email&rash=$cript'>" . sitedir . "updatepwd?email=$email&rash=$rash</a></h3>
+                <h3>Segue sua nova senha:</h3><br>
+                <p>" . $newsenha . "</p>
+                <h4>Essa senha pode ser alterada ao iniciar a sessão!</h4>
                 <hr>
                 <br>
                 Antenciosamente, Art Corpus.
             ";
             $messagem .= "</head></html>";
             if (mail($destinatario, $assunto, $messagem, $headers)) {
-                $feedback = 'sendmailsuccess';
+                // Salvando nova senha no banco
+                $id = $datauser['id'];
+                $datas->__set('senha', $rashsenha);
+                $datas->updateSenhaEmailRecovery($id);
+                $feedback = 'sendpwdsuccess';
                 header("Location: /authcontrollercontent?feedback=$feedback");
                 exit;
             } else {
-                $feedback = 'sendmailerror';
+                $feedback = 'sendpwderror';
                 header("Location: /authcontrollercontent?feedback=$feedback");
                 exit;
             }
@@ -57,29 +60,5 @@ class RecoveryController extends Action
             header("Location: /recovery?error=$feedback");
             exit;
         }
-    }
-
-    public function formUpdate()
-    {
-        $this->view('auth/updateSenha', 'layoutLogin');
-    }
-
-    public function update()
-    {
-        // Verificar se rash existe no banco
-        $rash = $_GET['rash'];
-        $datas = Container::getModel('Recovery');
-        $datas->__set('rash', $rash);
-        $result = $datas->rashVerify();
-
-        if(is_array($result))
-        {
-            echo 'rash ok';
-        } else {
-            $feedback = 'rashinvalid';
-            header("Location: /authcontrollercontent?feedback=$feedback");
-            exit;
-        }
-
     }
 }
