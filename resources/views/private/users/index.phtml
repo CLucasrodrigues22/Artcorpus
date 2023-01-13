@@ -33,7 +33,9 @@
                                     </button>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item" href="/showuser?id=<?= $usuario['id'] ?>"><i class="bx bx-edit-alt me-1"></i> Editar</a>
-                                        <a class="dropdown-item" href="/deleteuser?id=<?= $usuario['id'] ?>"><i class="bx bx-trash me-1"></i> Deletar</a>
+                                        <?php if ($_SESSION['id'] != $usuario['id']) : ?>
+                                            <a class="dropdown-item" href="/deleteuser?id=<?= $usuario['id'] ?>"><i class="bx bx-trash me-1"></i> Deletar</a>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                             </td>
