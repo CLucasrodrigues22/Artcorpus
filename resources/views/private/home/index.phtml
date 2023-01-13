@@ -54,7 +54,9 @@
                                         </div>
                                         <div class="user-progress d-flex align-items-center gap-1">
                                             <a href="/showuser?id=<?= $usuario['id'] ?>" class="btn btn-sm btn-warning"><i class='bx bx-pencil'></i></a>
-                                            <a href="/deleteuser?id=<?= $usuario['id'] ?>" class="btn btn-sm btn-danger"><i class='bx bx-trash'></i></a>
+                                            <?php if ($_SESSION['id'] != $usuario['id']) : ?>
+                                                <a href="/deleteuser?id=<?= $usuario['id'] ?>" class="btn btn-sm btn-danger"><i class='bx bx-trash'></i></a>
+                                            <?php endif; ?>
                                         </div>
                                     </div>
                                 </li>
