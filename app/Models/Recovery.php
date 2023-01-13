@@ -38,4 +38,13 @@ class Recovery extends Model
         $stmt->bindValue(':rash', $this->__get('rash'));
         $stmt->execute();
     }
+
+    public function rashVerify()
+    {
+        $q = "select * from recoverypwd where rash = :rash and status = 0";
+        $stmt = $this->db->prepare($q);
+        $stmt->bindValue(':rash', $this->__get('rash'));
+        $stmt->execute();
+        return $stmt->fetch();
+    }
 }

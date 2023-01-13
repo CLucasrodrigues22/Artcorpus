@@ -18,7 +18,6 @@ class RecoveryController extends Action
         $datas->__set('email', $_POST['email']);
         $datauser = $datas->validateUser();
         if (is_array($datauser)) {
-            echo 'ok';
             // Criando rash para alterar a senha
             $rash = password_hash($datauser['id'], PASSWORD_BCRYPT);
             $email = $datauser['email'];
@@ -67,5 +66,20 @@ class RecoveryController extends Action
 
     public function update()
     {
+        // Verificar se rash existe no banco
+        $rash = $_GET['rash'];
+        $datas = Container::getModel('Recovery');
+        $datas->__set('rash', $rash);
+        $result = $datas->rashVerify();
+
+        if(is_array($result))
+        {
+            echo 'rash ok';
+        } else {
+            $feedback = 'rashinvalid';
+            header("Location: /authcontrollercontent?feedback=$feedback");
+            exit;
+        }
+
     }
 }
